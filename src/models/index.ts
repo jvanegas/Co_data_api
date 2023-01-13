@@ -11,6 +11,10 @@ type DbConfigType = {
   }
 }
 
+// This changes the usual way to import the fastify instance.
+// This solution works with TS.
+// https://medium.com/@samratshaw/sequelize-cli-migrations-with-typescript-bd1bd41cbd6
+// This solution is based on: https://dev.to/jctaveras/sequelize-typescript-what-you-need-to-know-41mj
 async function dbConnector(config: DbConfigType): Promise<Sequelize> {
   const sequelize = new Sequelize(
     config.database,

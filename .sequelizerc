@@ -1,5 +1,11 @@
 const path = require('path')
 
+// This configuration is only for sequelize-cli migrations.
+// This is why the Sequelize config file is duplicated:
+// ./src/config/db.ts and ./config-sequelize-cli.cjs
+// There are two files due to incompatibility with ES6 imports with
+// sequelize-cli for config and migrations files (*.cjs).
+// It uses require(...) to get the files.
 module.exports = {
   'config': path.resolve('./', 'config-sequelize-cli.cjs'),
   'models-path': path.resolve('./build/', 'models'),
