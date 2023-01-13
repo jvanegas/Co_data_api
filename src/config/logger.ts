@@ -4,5 +4,5 @@ export const logger = {
     transport: {
       target: 'pino-pretty',
     },
-  }
+  },
 }
